@@ -1,0 +1,72 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/">Infy demo app</a>
+      <a class="navbar-brand" *ngIf="loggedIn" routerLink="/">Welcome {{item }} </a>
+
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+        <li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>
+        <li routerLinkActive="active"><a *ngIf="!loggedIn" routerLink="/login">Login</a></li>
+    <!--    <li routerLinkActive="active"><a routerLink="/register">Register</a></li> -->
+        <li routerLinkActive="active"><a *ngIf="loggedIn"(click)="clicked()" > Logout</a></li>
+
+    
+        <li routerLinkActive="active"><a  *ngIf="loggedIn" routerLink="/upload">Upload</a></li>
+
+        <ul class="nav navbar-nav  "  >
+    <li class="dropdown">
+    <!--    <a href ><b>Logout</b></a> -->
+        <!--   <a href ><b>Login</b></a> -->
+    </li>
+</ul>
+      </ul>
+    </div>
+
+    
+    <!-- /.nav-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- /.navbar -->
+<!--<div class="container">
+  <div class="section">
+    <router-outlet></router-outlet>
+  </div>
+</div>-->
+<div class="container-fluid app-container">
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".movies-cat">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    
+      </nav>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+  
+  <hr>
+  <footer>
+    <p>&copy; 2017 Knowledge Works, Inc.</p>
+  </footer>
+</div>
+<!--/.container-->
